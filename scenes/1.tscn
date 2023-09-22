@@ -1,9 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://clmkaaqhh6fes"]
+[gd_scene load_steps=4 format=3 uid="uid://clmkaaqhh6fes"]
 
 [ext_resource type="Texture2D" uid="uid://c2d457ftuavca" path="res://icon.svg" id="1_eblid"]
+[ext_resource type="Script" path="res://scripts/mov.gd" id="2_33y0t"]
+[ext_resource type="Script" path="res://scripts/luzmuda.gd" id="3_oa4x0"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36644, 0.0805243, -0.0506722)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.246088, -0.165207, -0.332712)
+shaded = true
 texture = ExtResource("1_eblid")
+script = ExtResource("2_33y0t")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0952089, -0.051686, 2.65299)
+fov = 77.7879
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.997311, 0.0732904, -1.85764e-09, -0.0688143, 0.936401, 0.344119, 0.0252206, -0.343193, 0.938926, -0.129491, 0.865241, 1.96437)
+light_color = Color(0.215686, 0.745098, 0.717647, 1)
+light_energy = 2.496
+light_size = 0.283
+shadow_enabled = true
+spot_range = 5.99778
+spot_angle = 25.5539
+script = ExtResource("3_oa4x0")
