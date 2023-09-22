@@ -10,5 +10,5 @@ func _ready():
 func _process(delta):
 	var cor = 0
 	cor += 1
-	Color.hex(cor)
+	
 	print('arroz')
