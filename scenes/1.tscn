@@ -1,16 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://clmkaaqhh6fes"]
+[gd_scene load_steps=10 format=3 uid="uid://clmkaaqhh6fes"]
 
 [ext_resource type="Texture2D" uid="uid://c2d457ftuavca" path="res://icon.svg" id="1_eblid"]
 [ext_resource type="Script" path="res://scripts/mov.gd" id="2_33y0t"]
 [ext_resource type="Script" path="res://scripts/luzmuda.gd" id="3_oa4x0"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="4_ql21x"]
-[ext_resource type="Resource" path="res:///data.hterrain" id="5_i1oot"]
+[ext_resource type="Resource" path="res://data.hterrain" id="5_i1oot"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="6_5tllw"]
+[ext_resource type="Texture2D" uid="uid://cac7en41v4gno" path="res://scenes/1_slot0_albedo_bump.png" id="7_bm0b5"]
+[ext_resource type="Texture2D" uid="uid://doj4wun0oiru8" path="res://scenes/1_slot0_normal_roughness.png" id="8_lb6pl"]
 
 [sub_resource type="Resource" id="Resource_xiyxf"]
 script = ExtResource("6_5tllw")
 mode = 0
-textures = [[], []]
+textures = [[ExtResource("7_bm0b5")], [ExtResource("8_lb6pl")]]
 
 [node name="Node3D" type="Node3D"]
 
@@ -39,9 +41,11 @@ spot_angle = 25.5539
 script = ExtResource("3_oa4x0")
 
 [node name="HTerrain" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -196.181, -29.6667, -186.059)
 script = ExtResource("4_ql21x")
+map_scale = Vector3(5, 5, 5)
 _terrain_data = ExtResource("5_i1oot")
-chunk_size = 32
+chunk_size = 64
 collision_enabled = true
 collision_layer = 1
 collision_mask = 1
