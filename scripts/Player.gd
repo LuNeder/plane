@@ -9,6 +9,9 @@ extends CharacterBody3D
 var target_velocity = Vector3.ZERO
 var underwater = true
 
+@onready var water_area = $WaterArea
+@onready var air_area = $AirArea
+
 
 func _physics_process(delta):
 	#Movement
@@ -35,22 +38,38 @@ func _physics_process(delta):
 	if not is_on_floor(): # If in the air, fall towards the floor. Literally gravity
 		target_velocity.y = target_velocity.y - (fall_acceleration * delta)
 	# Jump
-	if is_on_floor() and Input.is_action_just_pressed("move_up	"):
+	if is_on_floor() and Input.is_action_just_pressed("move_up"):
 		target_velocity.y = jump_impulse
 	# Moving the Character
 	velocity = target_velocity
 	move_and_slide()
 	
+#	# Iterate through all collisions that occurred this frame
+#	for index in range(get_slide_collision_count()):
+#		# We get one of the collisions with the player
+#		var collision = get_slide_collision(index)
+#		# If the collision is with ground
+#		if collision.get_collider() == null:
+#			continue
+#		if collision.get_collider().is_in_group("water"):
+#			underwater = true
+#		if collision.get_collider().is_in_group("air"):
+#			underwater = false
+#			# Prevent further duplicate calls.
+#			break
+	
 	# Is she underwater?
-	if position.y >= 0:
-		if not true: # check if inside manual water space
-			underwater = false
+	for index in range(get_slide_collision_count()):
+		# We get one of the collisions with the player
+		var collision = get_slide_collision(index)
+		# If the collision is with ground
+		if collision.get_collider() == null:
+			continue
+		if position.y <= 0:
+			underwater = not collision.get_collider().is_in_group("air")
 		else:
-			underwater = true
-	if position.y <= 0:
-		if not true: # check if inside manual air space
-			underwater = true
-		else:
-			underwater = false
+			underwater = collision.get_collider().is_in_group("water")
+		
+
 	# testing
 	print('underwater ' + str(underwater))

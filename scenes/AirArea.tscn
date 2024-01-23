@@ -1,10 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwre5j6l2wbas"]
+[gd_scene load_steps=3 format=3 uid="uid://d23repmsxbhrh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yv4u6"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_b7kdt"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_u0tqg"]
+height = 1.01
 
-[node name="WaterArea" type="Area3D" groups=["water"]]
+[node name="AirArea" type="Area3D" groups=["air"]]
 collision_layer = 8
 collision_mask = 7
 
@@ -12,4 +13,4 @@ collision_mask = 7
 shape = SubResource("BoxShape3D_yv4u6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_b7kdt")
+mesh = SubResource("CylinderMesh_u0tqg")

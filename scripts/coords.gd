@@ -1,5 +1,6 @@
-extends SpotLight3D
+extends RichTextLabel
 
+@onready var player = $/root/Node3D/Player
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,7 +9,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var cor = 0
-	cor += 1
-	
-	# print('arroz')
+	self.text = "x" + str(player.position.x)

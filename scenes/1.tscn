@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://clmkaaqhh6fes"]
+[gd_scene load_steps=14 format=3 uid="uid://clmkaaqhh6fes"]
 
+[ext_resource type="Script" path="res://scripts/coords.gd" id="1_42et1"]
 [ext_resource type="Texture2D" uid="uid://c2d457ftuavca" path="res://icon.svg" id="1_eblid"]
 [ext_resource type="PackedScene" uid="uid://cc83u4jeon8cv" path="res://scenes/Player.tscn" id="1_m5p46"]
+[ext_resource type="PackedScene" uid="uid://d23repmsxbhrh" path="res://scenes/AirArea.tscn" id="1_mauf7"]
 [ext_resource type="Script" path="res://scripts/mov.gd" id="2_33y0t"]
 [ext_resource type="Script" path="res://scripts/luzmuda.gd" id="3_oa4x0"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="4_ql21x"]
@@ -9,6 +11,7 @@
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="6_5tllw"]
 [ext_resource type="Texture2D" uid="uid://cac7en41v4gno" path="res://scenes/1_slot0_albedo_bump.png" id="7_bm0b5"]
 [ext_resource type="Texture2D" uid="uid://doj4wun0oiru8" path="res://scenes/1_slot0_normal_roughness.png" id="8_lb6pl"]
+[ext_resource type="PackedScene" uid="uid://dwre5j6l2wbas" path="res://scenes/WaterArea.tscn" id="10_l6fg5"]
 
 [sub_resource type="Resource" id="Resource_xiyxf"]
 script = ExtResource("6_5tllw")
@@ -17,8 +20,27 @@ textures = [[ExtResource("7_bm0b5")], [ExtResource("8_lb6pl")]]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_m5p46")]
-transform = Transform3D(-0.623552, 0, -0.781782, 0, 1, 0, 0.781782, 0, -0.623552, 33.9766, -9.48527, 155.851)
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(4.28, 1.6)
+text = "aaaaaaaa"
+script = ExtResource("1_42et1")
+
+[node name="WaterArea" parent="." instance=ExtResource("10_l6fg5")]
+transform = Transform3D(6.25248, 0, 0, 0, 8.25832, 0, 0, 0, 14.8169, 25.1757, 4.26315, 241.401)
+
+[node name="WaterArea2" parent="." instance=ExtResource("10_l6fg5")]
+transform = Transform3D(6.68894, 0, 0, 0, 6.11447, 0, 0, 0, 16.1635, 15.0229, 4.10097, 223.601)
+
+[node name="AirArea" parent="." instance=ExtResource("1_mauf7")]
+transform = Transform3D(2.28339, 0, 0, 0, 2.65709, 0, 0, 0, 3.20565, 79.4638, -8.82637, 204.241)
+
+[node name="AirArea2" parent="." instance=ExtResource("1_mauf7")]
+transform = Transform3D(15.0523, 0, 0, 0, 12.1197, 0, 0, 0, 17.7127, 67.1697, -11.9436, 188.755)
+
+[node name="Player" parent="." instance=ExtResource("1_m5p46")]
+transform = Transform3D(-0.623552, 0, -0.781782, 0, 1, 0, 0.781782, 0, -0.623552, 80.0698, 16.0079, 195.065)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 
@@ -29,7 +51,7 @@ texture = ExtResource("1_eblid")
 script = ExtResource("2_33y0t")
 
 [node name="CameraPivot" type="Marker3D" parent="."]
-transform = Transform3D(-0.164228, -0.172968, 0.971139, -0.00484114, 0.984636, 0.174553, -0.98641, 0.0239652, -0.162543, 47.179, -8.404, 158.112)
+transform = Transform3D(-0.164228, -0.172968, 0.971139, -0.00484114, 0.984636, 0.174553, -0.98641, 0.0239652, -0.162543, 93.2722, -8.404, 197.326)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000480652, 0.160004, -4.01801)
