@@ -62,6 +62,13 @@ move_down={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="player"
+3d_physics/layer_2="enemy"
+3d_physics/layer_3="world"
+3d_physics/layer_4="water"
+
 [shader_globals]
 
 sgt_player_position={
