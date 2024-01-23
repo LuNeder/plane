@@ -9,8 +9,8 @@ extends CharacterBody3D
 var target_velocity = Vector3.ZERO
 var underwater = true
 
-@onready var water_area = $WaterArea
-@onready var air_area = $AirArea
+@onready var water_area = $/root/Node3D/WaterArea
+@onready var air_area = $/root/Node3D/AirArea
 
 
 func _physics_process(delta):
@@ -58,7 +58,8 @@ func _physics_process(delta):
 #			# Prevent further duplicate calls.
 #			break
 	
-	# Is she underwater?
+
+	
 	for index in range(get_slide_collision_count()):
 		# We get one of the collisions with the player
 		var collision = get_slide_collision(index)
@@ -73,3 +74,4 @@ func _physics_process(delta):
 
 	# testing
 	print('underwater ' + str(underwater))
+	print(water_area.get_overlapping_bodies()) # This detects the player!!

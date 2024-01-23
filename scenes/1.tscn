@@ -23,8 +23,10 @@ textures = [[ExtResource("7_bm0b5")], [ExtResource("8_lb6pl")]]
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(4.28, 1.6)
-text = "aaaaaaaa"
+scale = Vector2(4.76, 1.6)
+text = "aaaaaaaahhh"
+fit_content = true
+autowrap_mode = 0
 script = ExtResource("1_42et1")
 
 [node name="WaterArea" parent="." instance=ExtResource("10_l6fg5")]

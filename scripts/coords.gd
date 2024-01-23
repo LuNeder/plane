@@ -9,4 +9,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	self.text = "x" + str(player.position.x)
+	self.text = "x" + str(player.position.x) + " y" + str(player.position.y) + " z" + str(player.position.z)
