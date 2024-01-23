@@ -18,7 +18,7 @@ textures = [[ExtResource("7_bm0b5")], [ExtResource("8_lb6pl")]]
 [node name="Node3D" type="Node3D"]
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_m5p46")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.934, -11.7901, 145.975)
+transform = Transform3D(-0.623552, 0, -0.781782, 0, 1, 0, 0.781782, 0, -0.623552, 33.9766, -9.48527, 155.851)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 
@@ -28,8 +28,11 @@ shaded = true
 texture = ExtResource("1_eblid")
 script = ExtResource("2_33y0t")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.979451, -0.19308, 0.0582693, 0.159211, 0.917577, 0.364287, -0.123803, -0.347525, 0.929462, 47.1785, -8.40353, 158.112)
+[node name="CameraPivot" type="Marker3D" parent="."]
+transform = Transform3D(-0.164228, -0.172968, 0.971139, -0.00484114, 0.984636, 0.174553, -0.98641, 0.0239652, -0.162543, 47.179, -8.404, 158.112)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000480652, 0.160004, -4.01801)
 fov = 63.1416
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
