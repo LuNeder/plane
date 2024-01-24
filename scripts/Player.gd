@@ -12,6 +12,8 @@ var underwater = true
 @onready var water_area = $/root/Node3D/WaterArea
 @onready var air_area = $/root/Node3D/AirArea
 
+func _ready():
+	WaterSignal.water_signal.connect(_water_signal)
 
 func _physics_process(delta):
 	#Movement
@@ -74,4 +76,7 @@ func _physics_process(delta):
 
 	# testing
 	print('underwater ' + str(underwater))
-	print(water_area.get_overlapping_bodies()) # This detects the player!!
+	print(str(water_area.get_overlapping_bodies())) # This detects the player!!
+
+func _water_signal():
+	print("water-sig")

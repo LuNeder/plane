@@ -30,16 +30,16 @@ autowrap_mode = 0
 script = ExtResource("1_42et1")
 
 [node name="WaterArea" parent="." instance=ExtResource("10_l6fg5")]
-transform = Transform3D(6.25248, 0, 0, 0, 8.25832, 0, 0, 0, 14.8169, 25.1757, 4.26315, 241.401)
+transform = Transform3D(14.81, 0, 0, 0, 14.81, 0, 0, 0, 14.81, 25.1757, 4.26315, 241.401)
 
 [node name="WaterArea2" parent="." instance=ExtResource("10_l6fg5")]
-transform = Transform3D(6.68894, 0, 0, 0, 6.11447, 0, 0, 0, 16.1635, 15.0229, 4.10097, 223.601)
+transform = Transform3D(16.16, 0, 0, 0, 16.16, 0, 0, 0, 16.16, 15.0229, 4.10097, 223.601)
 
 [node name="AirArea" parent="." instance=ExtResource("1_mauf7")]
-transform = Transform3D(2.28339, 0, 0, 0, 2.65709, 0, 0, 0, 3.20565, 79.4638, -8.82637, 204.241)
+transform = Transform3D(4.94, 0, 0, 0, 4.94, 0, 0, 0, 4.94, 81.7794, -8.82637, 208.427)
 
 [node name="AirArea2" parent="." instance=ExtResource("1_mauf7")]
-transform = Transform3D(15.0523, 0, 0, 0, 12.1197, 0, 0, 0, 17.7127, 67.1697, -11.9436, 188.755)
+transform = Transform3D(15.05, 0, 0, 0, 15.05, 0, 0, 0, 15.05, 67.1697, -11.9436, 188.755)
 
 [node name="Player" parent="." instance=ExtResource("1_m5p46")]
 transform = Transform3D(-0.623552, 0, -0.781782, 0, 1, 0, 0.781782, 0, -0.623552, 80.0698, 16.0079, 195.065)
