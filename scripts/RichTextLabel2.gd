@@ -8,4 +8,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	self.text = "ov-wt " + str(PlayerVariables.water_override) + " ov-ar " + str(PlayerVariables.air_override) + "\nuw " + str(PlayerVariables.underwater) 
+	self.text = "uw " + str(PlayerVariables.underwater) 

@@ -18,8 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 SimpleGrass="*res://addons/simplegrasstextured/singleton.tscn"
-WaterSignal="*res://scripts/water_signal.gd"
-AirSignal="*res://scripts/air_signal.gd"
 PlayerVariables="*res://scripts/player_variables.gd"
 
 [editor_plugins]

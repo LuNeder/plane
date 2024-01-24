@@ -7,13 +7,12 @@ extends CharacterBody3D
 @export var jump_impulse = 20
 
 var target_velocity = Vector3.ZERO
-# var underwater = true
 
-@onready var water_area = $/root/Node3D/WaterArea
-@onready var air_area = $/root/Node3D/AirArea
+
+@onready var parea = $Area3D 
 
 func _ready():
-	WaterSignal.water_signal.connect(_water_signal)
+	pass
 
 func _physics_process(delta):
 	#Movement
@@ -46,32 +45,14 @@ func _physics_process(delta):
 	velocity = target_velocity
 	move_and_slide()
 	
-#	# Iterate through all collisions that occurred this frame
-#	for index in range(get_slide_collision_count()):
-#		# We get one of the collisions with the player
-#		var collision = get_slide_collision(index)
-#		# If the collision is with ground
-#		if collision.get_collider() == null:
-#			continue
-#		if collision.get_collider().is_in_group("water"):
-#			underwater = true
-#		if collision.get_collider().is_in_group("air"):
-#			underwater = false
-#			# Prevent further duplicate calls.
-#			break
-	
-
-	
-	if not (PlayerVariables.water_override or PlayerVariables.air_override):
-		if position.y <= 0:
-			PlayerVariables.underwater = true
-		else:
-			PlayerVariables.underwater = false
+	# Is she underwater?
+	if position.y <= 0:
+		PlayerVariables.underwater = not ("AirArea" in str(parea.get_overlapping_areas()))
+	else:
+		PlayerVariables.underwater = ("WaterArea" in str(parea.get_overlapping_areas()))
 		
 
 	# testing
-	print('underwater ' + str(PlayerVariables.underwater) + " ov-wt " + str(PlayerVariables.water_override) + " ov-ar " + str(PlayerVariables.air_override))
-#	print(str(water_area.get_overlapping_bodies())) # This detects the player!!
+	print('underwater ' + str(PlayerVariables.underwater))
+	print(str(parea.get_overlapping_areas())) # This detects the areas!!
 
-func _water_signal():
-	print("water-sig")
