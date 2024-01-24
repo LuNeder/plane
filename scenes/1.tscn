@@ -21,31 +21,6 @@ textures = [[ExtResource("7_bm0b5")], [ExtResource("8_lb6pl")]]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Player" parent="." instance=ExtResource("1_m5p46")]
-transform = Transform3D(-0.623552, 0, -0.781782, 0, 1, 0, 0.781782, 0, -0.623552, 80.0698, 16.0079, 195.065)
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
-anchors_preset = -1
-anchor_right = 0.426
-anchor_bottom = 0.136
-offset_top = 554.0
-offset_right = 194.248
-offset_bottom = 548.872
-text = "bbbb"
-script = ExtResource("1_oalp3")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-anchors_preset = -1
-anchor_right = 0.434
-anchor_bottom = 0.099
-offset_right = -394.968
-offset_bottom = -30.152
-scale = Vector2(4.76, 1.6)
-text = "aaaaaaaahhh"
-fit_content = true
-autowrap_mode = 0
-script = ExtResource("1_42et1")
-
 [node name="WaterArea2" parent="." instance=ExtResource("10_l6fg5")]
 transform = Transform3D(16.16, 0, 0, 0, 16.16, 0, 0, 0, 16.16, 15.0229, 4.10097, 223.601)
 
@@ -106,3 +81,28 @@ shader_params/u_depth_blending = true
 shader_params/u_globalmap_blend_start = null
 shader_params/u_globalmap_blend_distance = null
 shader_params/u_tile_reduction = null
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_right = 0.426
+anchor_bottom = 0.136
+offset_top = 554.0
+offset_right = 194.248
+offset_bottom = 548.872
+text = "bbbb"
+script = ExtResource("1_oalp3")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_right = 0.434
+anchor_bottom = 0.099
+offset_right = -394.968
+offset_bottom = -30.152
+scale = Vector2(4.76, 1.6)
+text = "aaaaaaaahhh"
+fit_content = true
+autowrap_mode = 0
+script = ExtResource("1_42et1")
+
+[node name="Player" parent="." instance=ExtResource("1_m5p46")]
+transform = Transform3D(-0.623552, 0, -0.781782, 0, 1, 0, 0.781782, 0, -0.623552, 80.0698, 16.0079, 195.065)
