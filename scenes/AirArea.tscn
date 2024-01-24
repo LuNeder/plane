@@ -16,4 +16,5 @@ script = ExtResource("1_2dsr1")
 shape = SubResource("BoxShape3D_yv4u6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 8
 mesh = SubResource("CylinderMesh_u0tqg")

@@ -44,6 +44,11 @@ script = ExtResource("2_33y0t")
 [node name="CameraPivot" type="Marker3D" parent="."]
 transform = Transform3D(-0.164228, -0.172968, 0.971139, -0.00484114, 0.984636, 0.174553, -0.98641, 0.0239652, -0.162543, 93.2722, -8.404, 197.326)
 
+[node name="Camera3D2" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 8.3819e-08, -7.89762e-07, 0, 1, 1.98372e-07, 0, -4.63333e-08, 1, -2.06023, -2.00938, 8.16218)
+cull_mask = 1048567
+fov = 63.1416
+
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000480652, 0.160004, -4.01801)
 fov = 63.1416
