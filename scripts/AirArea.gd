@@ -12,4 +12,8 @@ func _process(delta):
 
 func _physics_process(delta):
 	if "Player" in str(get_overlapping_bodies()):
-		AirSignal.air_signal.emit()
+		PlayerVariables.air_override = true
+		PlayerVariables.underwater = false
+	else:
+		PlayerVariables.air_override = false
+

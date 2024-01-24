@@ -7,7 +7,7 @@ extends CharacterBody3D
 @export var jump_impulse = 20
 
 var target_velocity = Vector3.ZERO
-var underwater = true
+# var underwater = true
 
 @onready var water_area = $/root/Node3D/WaterArea
 @onready var air_area = $/root/Node3D/AirArea
@@ -62,21 +62,16 @@ func _physics_process(delta):
 	
 
 	
-	for index in range(get_slide_collision_count()):
-		# We get one of the collisions with the player
-		var collision = get_slide_collision(index)
-		# If the collision is with ground
-		if collision.get_collider() == null:
-			continue
+	if not (PlayerVariables.water_override or PlayerVariables.air_override):
 		if position.y <= 0:
-			underwater = not collision.get_collider().is_in_group("air")
+			PlayerVariables.underwater = true
 		else:
-			underwater = collision.get_collider().is_in_group("water")
+			PlayerVariables.underwater = false
 		
 
 	# testing
-	print('underwater ' + str(underwater))
-	print(str(water_area.get_overlapping_bodies())) # This detects the player!!
+	print('underwater ' + str(PlayerVariables.underwater))
+#	print(str(water_area.get_overlapping_bodies())) # This detects the player!!
 
 func _water_signal():
 	print("water-sig")

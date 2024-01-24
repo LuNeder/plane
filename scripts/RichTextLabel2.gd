@@ -1,8 +1,5 @@
-extends Node
+extends RichTextLabel
 
-var underwater = true
-var water_override = false
-var air_override = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,4 +8,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	self.text = "ov-wt " + str(PlayerVariables.water_override) + " ov-ar " + str(PlayerVariables.air_override) + "\nuw " + str(PlayerVariables.underwater) 
