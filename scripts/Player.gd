@@ -70,7 +70,7 @@ func _physics_process(delta):
 		
 
 	# testing
-	print('underwater ' + str(PlayerVariables.underwater))
+	print('underwater ' + str(PlayerVariables.underwater) + " ov-wt " + str(PlayerVariables.water_override) + " ov-ar " + str(PlayerVariables.air_override))
 #	print(str(water_area.get_overlapping_bodies())) # This detects the player!!
 
 func _water_signal():

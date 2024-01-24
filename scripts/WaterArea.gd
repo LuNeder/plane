@@ -14,5 +14,5 @@ func _physics_process(delta):
 	if "Player" in str(get_overlapping_bodies()):
 		PlayerVariables.water_override = true
 		PlayerVariables.underwater = true
-	else:
-		PlayerVariables.water_override = false # Cant set the override to false in here bc otherwise they'll fight and might be false when it should be true
+#	else:
+#		PlayerVariables.water_override = false # Cant set the override to false in here bc otherwise they'll fight and might be false when it should be true
