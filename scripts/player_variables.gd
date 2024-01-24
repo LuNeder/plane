@@ -1,8 +1,8 @@
 extends Node
 
 var underwater = true
-var water_override = false
-var air_override = false
+var water_override = 0
+var air_override = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,6 +10,6 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
-	water_override = false
-	air_override = false
+#func _physics_process(delta):
+#	water_override = false
+#	air_override = false

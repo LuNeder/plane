@@ -9,8 +9,6 @@ extends CharacterBody3D
 var target_velocity = Vector3.ZERO
 # var underwater = true
 
-@onready var water_area = $/root/Node3D/WaterArea
-@onready var air_area = $/root/Node3D/AirArea
 
 func _ready():
 	WaterSignal.water_signal.connect(_water_signal)
@@ -62,7 +60,7 @@ func _physics_process(delta):
 	
 
 	
-	if not (PlayerVariables.water_override or PlayerVariables.air_override):
+	if not ((PlayerVariables.water_override > 0) or (PlayerVariables.air_override > 0)):
 		if position.y <= 0:
 			PlayerVariables.underwater = true
 		else:

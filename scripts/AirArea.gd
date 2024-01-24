@@ -11,9 +11,10 @@ func _process(delta):
 	pass
 
 func _physics_process(delta):
-	if "Player" in str(get_overlapping_bodies()):
-		PlayerVariables.air_override = true
+	PlayerVariables.air_override += 1
+	if "Player" not in str(get_overlapping_bodies()):
+		PlayerVariables.air_override -= 1
+	else:
 		PlayerVariables.underwater = false
-#	else:
 #		PlayerVariables.air_override = false
 
