@@ -1,2 +1,2 @@
-# lucia
- Random stuff, testing Godot
+# plane
+ Arcade plane game
